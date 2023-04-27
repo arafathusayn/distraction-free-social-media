@@ -1,0 +1,23 @@
+{
+  "name": "distraction-free",
+  "version": "0.0.1",
+  "description": "A browser extension for controlling Suggestions and Ads on social media web apps.",
+  "main": "dist/content.js",
+  "devDependencies": {
+    "chrome-types": "^0.1.187",
+    "typescript": "^5.0.4"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w"
+  },
+  "keywords": [
+    "extension"
+  ],
+  "author": {
+    "name": "Arafat Husayn",
+    "url": "https://arafat.dev",
+    "email": "hello@arafat.dev"
+  },
+  "license": "SEE LICENSE IN license.md"
+}
