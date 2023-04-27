@@ -8,6 +8,7 @@ async function main() {
 }
 const defaultConfig = {
     facebook: {
+        removeAllOfSuggestions: false,
         suggestionCaptureText: "Suggested for you",
         videoContainerSelector: "div[data-visualcompletion]",
         showVideoButtonLabel: "Show Video",
@@ -25,8 +26,12 @@ function init(config = defaultConfig) {
         for (const mutation of mutations) {
             if (mutation.type === "childList") {
                 for (const node of mutation.addedNodes) {
-                    if (node.textContent?.includes(config.facebook?.suggestionCaptureText || "Suggested for you") &&
+                    if (node?.textContent?.includes(config.facebook?.suggestionCaptureText || "Suggested for you") &&
                         node instanceof HTMLDivElement) {
+                        if (config.facebook?.removeAllOfSuggestions === true) {
+                            node.remove();
+                            continue;
+                        }
                         //#region Hide suggested videos
                         const nodeObserver = new MutationObserver((nodeMutations) => {
                             for (const nodeMutation of nodeMutations) {

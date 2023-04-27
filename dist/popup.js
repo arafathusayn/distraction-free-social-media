@@ -3,6 +3,7 @@
 chrome ??= browser;
 const df = {
     facebook: {
+        removeAllOfSuggestions: false,
         suggestionCaptureText: "Suggested for you",
         videoContainerSelector: "div[data-visualcompletion]",
         showVideoButtonLabel: "Show Video",
